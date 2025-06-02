@@ -118,7 +118,7 @@ function App() {
 
 			<AnimatePresence>
 				{filteredTasks.length === 0 ? (
-					<p>
+					<p className={styles.hint}>
 						{filter === "all"
 							? "list is empty"
 							: filter === "active"
