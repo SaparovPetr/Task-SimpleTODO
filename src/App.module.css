@@ -1,0 +1,156 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 30px;
+  margin: 5px;
+  min-width: 300px;
+  height: 37rem;
+
+  .inputArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .input {
+      padding: 15px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: 1px solid white;
+      background: #323131;
+      color: white;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      color: white;
+      border: 1px solid white;
+      background: #323131;
+      word-break: normal;
+      width: 50%;
+    }
+
+    .tabsContainer {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      .tabButton {
+        padding: 8px 16px;
+        border-radius: 30px;
+        border: 1px solid white;
+        background-color: #323131;
+        color: white;
+        cursor: pointer;
+
+        &.tabButtonActive {
+          border: 2px solid white;
+          background-color: #4c4d4d;
+        }
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    padding: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    @supports (scrollbar-width: none) {
+      scrollbar-width: none;
+    }
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .listItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border: 1px solid white;
+      border-radius: 30px;
+      color: white;
+      word-break: break-word;
+
+      .todoLabel {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        flex-grow: 1;
+        @supports (user-select: none) {
+            user-select: none;
+        }
+        .checkbox {
+          width: 18px;
+          height: 18px;
+          margin-right: 12px;
+          cursor: pointer;
+          accent-color: #5f6060;
+
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+
+          background-color: #323131;
+          border: 1.5px solid white;
+          border-radius: 4px;
+          position: relative;
+
+          &:checked {
+            background-color: #323131;
+            border-color: white;
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: 5px;
+              top: 1px;
+              width: 5px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+        .listText {
+          padding-right: 10px;
+          flex-grow: 1;
+          cursor: pointer;
+
+          &.listTextCompleted {
+            text-decoration: line-through;
+            color: #888;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+    font-size: 16px;
+  }
+}
