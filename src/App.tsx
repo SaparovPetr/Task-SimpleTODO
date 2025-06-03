@@ -81,7 +81,7 @@ function App() {
 			<div className={styles.inputArea}>
 				<input
 					type="text"
-					placeholder="What nedds to be done?"
+					placeholder="What needs to be done?"
 					value={inputValue}
 					onChange={handleInputChange}
 					onKeyDown={handleKeyDown}
